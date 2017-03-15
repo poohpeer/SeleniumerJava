@@ -2,8 +2,12 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import seleniumer.java.DriverGender;
+import seleniumer.java.DriverType;
+import seleniumer.java.WebDriverFactory;
 
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
@@ -14,17 +18,16 @@ public class TestHelloWorld {
     static WebDriver driver = null;
 
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() throws URISyntaxException {
         System.out.println("Getting Driver");
         WebDriverFactory driverFactory = new WebDriverFactory();
-        driver = driverFactory.getDriver();
+        driver = driverFactory.getDriver(DriverGender.chrome, DriverType.local);
     }
 
     @AfterClass
     public static void tearDown(){
         System.out.println("Closing Driver");
         driver.close();
-        driver.quit();
     }
 
     @Test

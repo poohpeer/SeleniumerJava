@@ -1,3 +1,5 @@
+package seleniumer.java;
+
 /**
  * Created by Puper on 15/3/2017.
  */
